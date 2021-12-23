@@ -8,7 +8,7 @@
 </head>
 <body>
  
-<form method="POST" action="personServlet"> 
+<form method="POST" action="personServlet" > 
 
 <table>
 <tr>

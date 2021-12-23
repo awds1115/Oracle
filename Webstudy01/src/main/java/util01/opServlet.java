@@ -2,6 +2,7 @@ package util01;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.net.http.HttpResponse;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -27,18 +28,21 @@ public class opServlet extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+	protected void doGet(HttpServletRequest req, HttpServletResponse response) throws ServletException, IOException {
+		doPost(req,response);
 	}
-
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest req, HttpServletResponse response) throws ServletException, IOException {
+		response.setContentType("text/html; charset=utf-8"); // 
+		req.setCharacterEncoding("UTF-8");  // 한글입력 데이터 유지
 		String value1=req.getParameter("value1");
 		String value2=req.getParameter("value2");
 		String operator=req.getParameter("operator");
+		if( value1==null || value2==null || operator==null) {
+			return; // validation(유효성 검사) 해줘야함
+		}
 		int num1=Integer.parseInt(value1);
 		int num2=Integer.parseInt(value2);
 		PrintWriter out=response.getWriter();
@@ -50,11 +54,7 @@ public class opServlet extends HttpServlet {
 		} else if(operator.equals("*")) {
 			outstr+="value1:"+num1+"<br> value2:"+num2+"<br> operator:"+operator+"<br> result:"+(num1*num2)+"</body></html>";
 		} else if(operator.equals("/")) {
-			outstr+="valu"
-					+ ""
-					+ ""
-					+ ""
-					+ "e1:"+num1+"<br> value2:"+num2+"<br> operator:"+operator+"<br> result:"+(num1/num2)+"</body></html>";
+			outstr+="value1:"+num1+"<br> value2:"+num2+"<br> operator:"+operator+"<br> result:"+(num1/num2)+"</body></html>";
 		}
 			out.println(outstr);
 				
