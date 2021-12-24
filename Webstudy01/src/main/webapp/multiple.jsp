@@ -7,7 +7,7 @@
 <title>다중선택</title>
 </head>
 <body>
-<form method=get action=multiServlet>
+<form method=get action=Multiple_bk.jsp>
 <select name=item multiple size=10 style='width:120px;'>
 <option value='신발'>신발</option>
 <option value='가방'>가방</option>

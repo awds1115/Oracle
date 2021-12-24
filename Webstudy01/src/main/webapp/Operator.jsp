@@ -4,10 +4,10 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>계산기</title>
 </head>
 <body>
-<form method="GET" action="opServlet"> 
+<form method="POST" action="Operator_bk.jsp"> 
 <table>
 <tr><td>value1</td><td><input type=text name="value1" id=value1 ></td></tr>
 <tr><td>value2</td><td><input type=text name="value2" id=value2 ></td></tr>

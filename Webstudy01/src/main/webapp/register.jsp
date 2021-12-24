@@ -6,7 +6,17 @@
 <meta charset="UTF-8">
 <title>회원가입</title>
 </head>
-<form method=POST action=memberServlet>
+<style>
+table{
+	border-collapse:collapse;
+	background-color: yellow;
+}
+td{
+	border:1px solid blue;
+}
+
+</style>
+<form method=POST action=validate.jsp>
 <body align=center>
     <table align=center>
         <tr>
@@ -47,12 +57,41 @@
         </tr>
         <tr>
             <td colspan=2>
-                <input type=submit value='작성완료'>&nbsp;
-                <input type=reset name='Reset'>
+                <input type=submit value='가입완료'>&nbsp;
+                <input type=button id=btncancel value='취소'>
             </td>
         </tr>
     </table>
-    
+    </form>
 </body>
-</form>
+<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+<script>
+$(document)
+.on('submit',function(){
+
+	//if($('#passcode2').val()=='') {
+		// #passcode2 로 id 를 찾아 조건을 달아도 되고
+		// input[name=passcode2] 로 name을 찾아 조건을 달아도 된다.
+		if($('input[name=passcode2]').val()==''){
+		alert('false');
+		return false;   // submit 취소
+	} else {
+		alert('true');
+		return true;    // submit 진행 
+	}
+})
+		// 유효성검사(validation)결과가 허용범위이면 return true -> submit 계속 진행(서버쪽에 전달)
+		// 허용안되는 값이 있으면 return false -> submit 중단(서버쪽으로 전달을 차단)
+.on('click','#btncancel',function(){
+	document.location='login.jsp';
+	})
+
+	
+	
+	
+	
+	
+	
+
+</script>
 </html>
