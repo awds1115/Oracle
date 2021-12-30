@@ -11,7 +11,7 @@ table{
 	border-collapse:collapse;
 	background-color: yellow;
 }
-td{
+td{ 
 	border:1px solid blue;
 }
 
@@ -68,22 +68,38 @@ td{
 <script>
 $(document)
 .on('submit',function(){
-
-	//if($('#passcode2').val()=='') {
-		// #passcode2 로 id 를 찾아 조건을 달아도 되고
-		// input[name=passcode2] 로 name을 찾아 조건을 달아도 된다.
-		if($('input[name=passcode2]').val()==''){
-		alert('false');
+// 	if($('#passcode2').val()=='') {
+// 		#passcode2 로 id 를 찾아 조건을 달아도 되고
+// 		input[name=passcode2] 로 name을 찾아 조건을 달아도 된다.
+		if($('#realname').val()=='' || $('#userid').val()==''|| 
+		   $('#passcode1').val()=='' || $('#passcode2').val()=='' || $('#mobile').val()==''){
+		alert('입력하지 않은 값이 있습니다.');
 		return false;   // submit 취소
-	} else {
-		alert('true');
-		return true;    // submit 진행 
+	} else if( $('#passcode1').val()!=$('#passcode2').val()){
+		alert('비밀번호가 같지 않습니다.');
+		return false;
+		} else if($('input:radio[name=gender]:checked').val()==undefined){
+			 alert('성별을 고르세요');
+			   return false;
+		} else if($('input:checkbox[name=interest]:checked').val()==undefined){
+			alert('관심분야를 고르세요');
+			   return false;
+		}else {
+			alert('회원가입이 되었습니다.');
+			   return true;    // submit 진행 
 	}
+// 	$('input[name=gender]').is(":checked")==false
+// ($('input:checkbox[name=interest]').is(":checked")==false
+		// ->아래 처럼 체크된 값들을 모두 불러와서 str에 붙인 후 있냐 없냐로 체크할 수도 있음 
+		//$('input[name=interest]:checked').each(function(){
+// 			str+=','$(this).val();
+// 		})
 })
 		// 유효성검사(validation)결과가 허용범위이면 return true -> submit 계속 진행(서버쪽에 전달)
 		// 허용안되는 값이 있으면 return false -> submit 중단(서버쪽으로 전달을 차단)
 .on('click','#btncancel',function(){
 	document.location='login.jsp';
+	return false;
 	})
 
 	

@@ -1,0 +1,15 @@
+@charset "EUC-KR";
+body {
+	background-color: yellow;
+	background-image:url("https://images.pexels.com/photos/7042219/pexels-photo-7042219.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260");
+	background-repeat:space;
+	background-size:cover;
+	font-family:"±Ã¼­Ã¼";
+}
+#signon{
+	border-collapse:collapse;
+	background-color: yellow;
+}
+#sign{ 
+	border:1px solid blue;
+}

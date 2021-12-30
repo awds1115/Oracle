@@ -12,7 +12,7 @@
 	 		session.setAttribute("userid",request.getParameter("userid"));
 	 		session.setAttribute("passcode1",request.getParameter("passcode1"));
 	 		
-	 		response.sendRedirect("login.jsp");
+	 		response.sendRedirect("signin.jsp");
 // 	 		RequestDispatcher rd2=request.getRequestDispatcher("login.jsp");	
 // 	 		rd2.forward(request,response);
 // response.sendRedirect("login.jsp?userid="+request.getParameter("userid"));
