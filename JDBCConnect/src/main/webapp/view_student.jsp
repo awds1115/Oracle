@@ -32,7 +32,7 @@ td,th {border:1px solid black;
 
 </style>
 <table>
-<tr><th>이름</th><th>국어</th><th>수학</th></tr>
+<tr><th>이름</th><th>수학</th><th>국어</th></tr>
 <%
 try {
 	 Class.forName("oracle.jdbc.driver.OracleDriver"); // driver (ojdbc6.jar)
@@ -42,10 +42,10 @@ try {
 	 while(rs.next()){
 
 	String name=rs.getString("name");
-	int korean=rs.getInt("korean");
 	int math=rs.getInt("math");
+	int korean=rs.getInt("korean");
 	%>
-	<tr><td><%=name %></td><td><%=korean %></td><td><%=math %></td></tr>
+	<tr><td><%=name %></td><td><%=math %></td><td><%=korean %></td></tr>
 	<%	 
 	 }
 } catch(Exception e){
