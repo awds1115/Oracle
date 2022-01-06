@@ -1,0 +1,42 @@
+@charset "EUC-KR";
+body {  background-image:url(https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMTA2MjZfMjYw%2FMDAxNjI0NjkxNzg5MzUz.qMMnnP-jiGOceEifD5YC_CVeDZF8ZFBhuHzDmLYpQPkg.5heDr7DMal44Z5ESX9cLKuI1yy1OEYSqluvh5dlHj1kg.JPEG.love386600%2FP1175507.JPG&type=sc960_832);
+		background-repeat:no-repeat;
+		background-size:cover;
+}
+table { 
+	border-collapse:collapse
+}
+td,th {
+	border:1px solid black;
+	background-color:#ccd827;
+	font-family:«‘√ ∑’πŸ≈¡;
+	color:BLACK;
+}
+#btnGo,#reset{
+	border-top-left-radius: 6px;
+	border-bottom-left-radius: 6px;
+	border-top-right-radius: 6px;
+	border-bottom-right-radius: 6px;
+	margin-right:-10px;
+	width:100px;
+	height:50px;
+	font-size:30px;
+	background-color:#ccd827;
+	
+}
+#btnGo:hover{
+ 	background-color: #4CAF50;
+    color: white;
+
+}
+#reset:hover{
+ 	background-color: #4CAF50;
+    color: white;
+
+}
+#btn_group{
+	border:1px solid rgba(0,0,0,0);
+	background-color: rgba(0,0,0,0);
+	padding: 20px;
+
+}
