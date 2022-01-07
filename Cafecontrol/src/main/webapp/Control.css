@@ -18,11 +18,11 @@ table.bound{
 td.bound {
     border:1px solid blue;
 }
-#selMenu,#selOrder,#selSales,#selMenu1 {
+#selMenu,#selOrder,#selSales,#selMenu1,#selSales1,#selSales2 {
     width: 260px;
 }
 #btnReset, #btnAdd, #btnCancel, #btnDone, #clean #btnPlus, #btnMinus, #btnUpdate,
-#clean, #btnMenu{
+#clean, #btnMenu,#btnSum{
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
     border-top-right-radius: 5px;
@@ -40,12 +40,12 @@ body {
     font-weight: 700;
     font-family: ¸¼Àº°íµñ;
 }
-#dlgMenu {
+#dlgMenu,#dlgSales {
     display: none;
 }
 #_menuname{
     width:120px;
 }
 #_price{
-    width: 50px;
+    width: 80px;
 }

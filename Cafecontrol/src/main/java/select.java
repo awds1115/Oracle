@@ -41,16 +41,16 @@ public class select extends HttpServlet {
 		String url="jdbc:oracle:thin:@localhost:1521:orcl"; // DB접속정보
 		String userid="ora_user";
 		String passcode="human123";
-		String sql="select name,price from menu order by code";
+		String sql="select code,name,price from menu";
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			conn=DriverManager.getConnection(url,userid,passcode); // null if connection failed.
 			stmt=conn.createStatement();
 			rs=stmt.executeQuery(sql);
 			while(rs.next()) {
-
+				
 				if(!strReturn.equals("")) strReturn+=";";
-				strReturn+=rs.getString("name")+","+rs.getInt("price");
+				strReturn+=rs.getInt("code")+","+rs.getString("name")+","+rs.getInt("price");
 			}
 			
 		} catch (Exception e) {
